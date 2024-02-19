@@ -13,6 +13,11 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        satoshiRegular: ["Satoshi-Regular", 'system-ui'],
+        satoshiMedium: ["Satoshi-Medium", 'system-ui'],
+        satoshiBold: ["Satoshi-Bold", 'system-ui'],
+      }
     },
   },
   plugins: [],
