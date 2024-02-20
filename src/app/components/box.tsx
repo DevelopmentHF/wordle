@@ -25,9 +25,13 @@ const Box: FC<BoxProps> = ({ ...props }) => {
         // temporary selection thing\
         case isSelected:
             content = (
-                <div className="p-4 m-2 bg-zinc-500" onClick={handleClick}>
-                    {}
+                <div onClick={handleClick}>
+                    <input className=" p-4 w-full bg-zinc-500"
+                    type="text"
+                    maxLength={1}>
+                    </input>
                 </div>
+                
             );
         break;
         case props.hasGuessed && props.guessedLetter === props.correctLetter:
@@ -37,7 +41,7 @@ const Box: FC<BoxProps> = ({ ...props }) => {
             </div>
         );
         break;
-        case props.hasGuessed && props.guessedLetter != props.correctLetter && props.word.includes(props.guessedLetter):
+        case props.hasGuessed && props.guessedLetter != props.correctLetter && props.word.includes(props.guessedLetter!):
             content = (
                 <div className="p-4 m-2 bg-yellow-500" onClick={handleClick}>
                     {props.guessedLetter}
@@ -52,13 +56,20 @@ const Box: FC<BoxProps> = ({ ...props }) => {
             );
         default:
         content = (
-            <div className="p-4 m-2 bg-zinc-800" onClick={handleClick}>
-            <p>{props.guessedLetter}</p>
+            <div onClick={handleClick}>
+                <input className="p-4 w-full bg-zinc-800"
+                type="text"
+                maxLength={1}>
+                </input>
             </div>
         );
     }
 
-     return content;
+    return (
+        <div className="w-20 h-20 m-2"> {/* Adjust the width based on your design */}
+          {content}
+        </div>
+      );
 }
 
 export default Box;
