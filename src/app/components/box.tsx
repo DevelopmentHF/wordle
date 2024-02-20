@@ -26,7 +26,7 @@ const Box: FC<BoxProps> = ({ ...props }) => {
         case isSelected:
             content = (
                 <div onClick={handleClick}>
-                    <input className=" p-4 w-full bg-zinc-500"
+                    <input className="w-full px-0 py-4 bg-zinc-900 text-center rounded-md caret-transparent"
                     type="text"
                     maxLength={1}>
                     </input>
@@ -50,14 +50,14 @@ const Box: FC<BoxProps> = ({ ...props }) => {
         break;
         case props.hasGuessed:
             content = (
-                <div className="p-4 m-2 bg-zinc-800" onClick={handleClick}>
+                <div className=" bg-zinc-800" onClick={handleClick}>
                     {props.guessedLetter}
                 </div>
             );
         default:
         content = (
             <div onClick={handleClick}>
-                <input className="p-4 w-full bg-zinc-800"
+                <input className="px-0 py-4 w-full bg-zinc-900 text-center rounded-md"
                 type="text"
                 maxLength={1}>
                 </input>
@@ -66,7 +66,7 @@ const Box: FC<BoxProps> = ({ ...props }) => {
     }
 
     return (
-        <div className="w-20 h-20 m-2"> {/* Adjust the width based on your design */}
+        <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-satoshiBold w-20p h-20p m-2"> {/* Adjust the width based on your design */}
           {content}
         </div>
       );
